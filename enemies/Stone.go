@@ -1,11 +1,11 @@
 components {
-  id: "player"
-  component: "/player/player.script"
+  id: "stone"
+  component: "/enemies/stone.script"
 }
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"gem\"\n"
+  data: "default_animation: \"stone\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
@@ -16,12 +16,12 @@ embedded_components {
 embedded_components {
   id: "collisionobject"
   type: "collisionobject"
-  data: "type: COLLISION_OBJECT_TYPE_KINEMATIC\n"
+  data: "type: COLLISION_OBJECT_TYPE_TRIGGER\n"
   "mass: 0.0\n"
   "friction: 0.1\n"
   "restitution: 0.5\n"
-  "group: \"player\"\n"
-  "mask: \"stone\"\n"
+  "group: \"stone\"\n"
+  "mask: \"player\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"
@@ -34,6 +34,5 @@ embedded_components {
   "  }\n"
   "  data: 32.0\n"
   "}\n"
-  "locked_rotation: true\n"
   ""
 }

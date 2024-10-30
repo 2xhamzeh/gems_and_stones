@@ -2,5 +2,40 @@ name: "main"
 instances {
   id: "Player"
   prototype: "/player/Player.go"
+  position {
+    x: 89.0
+    y: 88.0
+    z: 1.0
+  }
+}
+instances {
+  id: "Stone"
+  prototype: "/enemies/Stone.go"
+  position {
+    x: 543.0
+    y: 208.0
+  }
+}
+instances {
+  id: "Stone1"
+  prototype: "/enemies/Stone.go"
+  position {
+    x: 314.0
+    y: 234.0
+  }
+  scale3 {
+    x: 0.666964
+    y: 0.476375
+  }
 }
 scale_along_z: 0
+embedded_instances {
+  id: "enemies"
+  data: "embedded_components {\n"
+  "  id: \"factory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/enemies/Stone.go\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}

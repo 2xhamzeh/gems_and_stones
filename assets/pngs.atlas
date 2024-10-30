@@ -1,4 +1,7 @@
 images {
   image: "/assets/gem.png"
 }
+images {
+  image: "/assets/stone.png"
+}
 extrude_borders: 2

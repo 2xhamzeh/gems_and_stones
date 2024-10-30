@@ -17,4 +17,5 @@ scale_mode = stretch
 
 [project]
 title = gems_and_stones
+dependencies#0 = https://github.com/Insality/druid/archive/refs/tags/1.0.zip
 

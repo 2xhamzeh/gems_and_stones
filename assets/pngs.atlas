@@ -4,4 +4,7 @@ images {
 images {
   image: "/assets/stone.png"
 }
+images {
+  image: "/assets/backgorundtest.jpg"
+}
 extrude_borders: 2

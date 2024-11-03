@@ -38,7 +38,7 @@ instances {
     }
     properties {
       id: "zoom"
-      value: "0.1"
+      value: "0.2"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {

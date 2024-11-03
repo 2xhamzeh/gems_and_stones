@@ -30,12 +30,16 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("trigger_response") then 
-		-- let the player know he's been hit
-		msg.post("Player", "hit")
-		msg.post(self.parent, "dead")
-		go.delete()
+		if message.other_group == hash("player") then
+			-- let the player know he's been hit
+			msg.post("Player", "hit")
+			-- let the factory know one stone is dead
+			msg.post(self.parent, "dead")
+			go.delete()
+		elseif message.other_group == hash("attack") then
+			go.delete()
+		end
 	end
-
 end
 
 

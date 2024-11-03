@@ -16,7 +16,7 @@ key_trigger {
 }
 key_trigger {
   input: KEY_SPACE
-  action: "basic_attack"
+  action: "attack"
 }
 key_trigger {
   input: KEY_UP

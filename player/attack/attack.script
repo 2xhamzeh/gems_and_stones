@@ -1,0 +1,21 @@
+go.property("direction", vmath.vector3())
+
+function init(self)
+	self.speed = 1000
+	self.pos = go.get_position()
+	self.timer = 5
+end
+
+function update(self, dt)
+	self.timer = self.timer - dt
+	if self.timer <= 0 then
+		go.delete()
+	end
+	self.pos = self.pos + self.direction * self.speed * dt
+	go.set_position(self.pos)
+end
+
+function on_message(self, message_id, message, sender)
+
+end
+

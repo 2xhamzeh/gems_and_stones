@@ -25,8 +25,8 @@ dependencies#0 = https://github.com/Insality/druid/archive/refs/tags/1.0.zip
 dependencies#1 = https://github.com/britzl/defold-orthographic/archive/refs/tags/3.3.2.zip
 
 [graphics]
-default_texture_min_filter = linear
-default_texture_mag_filter = linear
+default_texture_min_filter = nearest
+default_texture_mag_filter = nearest
 
 [factory]
 max_count = 128
@@ -38,4 +38,7 @@ max_count = 1024
 max_collision_object_count = 1024
 max_collisions = 128
 trigger_overlap_capacity = 128
+
+[tilemap]
+max_tile_count = 10000
 

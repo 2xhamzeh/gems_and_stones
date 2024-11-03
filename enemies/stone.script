@@ -1,7 +1,7 @@
 go.property("parent", msg.url())
 
 function init(self)
-	self.speed = 1000
+	self.speed = 50
 	self.pos = go.get_position()
 	self.dircetion = vmath.vector3()
 end
@@ -33,12 +33,11 @@ function on_message(self, message_id, message, sender)
 		if message.other_group == hash("player") then
 			-- let the player know he's been hit
 			msg.post("Player", "hit")
-			-- let the factory know one stone is dead
-			msg.post(self.parent, "dead")
-			go.delete()
-		elseif message.other_group == hash("attack") then
-			go.delete()
+			
 		end
+		-- let the factory know one stone is dead
+		msg.post(self.parent, "dead")
+		go.delete()
 	end
 end
 

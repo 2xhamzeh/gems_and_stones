@@ -1,5 +1,5 @@
 
-go.property("speed", 5000)
+go.property("speed", 100)
 
 function init(self)
 	msg.post(".", "acquire_input_focus")

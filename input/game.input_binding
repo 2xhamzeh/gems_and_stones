@@ -38,3 +38,7 @@ mouse_trigger {
   input: MOUSE_BUTTON_1
   action: "touch"
 }
+mouse_trigger {
+  input: MOUSE_BUTTON_1
+  action: "attack"
+}

@@ -5,16 +5,13 @@ components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"air_attack\"\n"
+  data: "default_animation: \"attack\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
   "  texture: \"/assets/pngs.atlas\"\n"
   "}\n"
   ""
-  position {
-    y: -3.0
-  }
   scale {
     x: 1.3734
     y: 0.92911
@@ -31,15 +28,17 @@ embedded_components {
   "mask: \"stone\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
-  "    shape_type: TYPE_SPHERE\n"
+  "    shape_type: TYPE_BOX\n"
   "    position {\n"
   "    }\n"
   "    rotation {\n"
   "    }\n"
   "    index: 0\n"
-  "    count: 1\n"
+  "    count: 3\n"
   "  }\n"
-  "  data: 7.004796\n"
+  "  data: 10.0\n"
+  "  data: 0.8387095\n"
+  "  data: 10.0\n"
   "}\n"
   ""
 }

@@ -1,13 +1,12 @@
 images {
-  image: "/assets/gem.png"
-}
-images {
   image: "/assets/stone.png"
 }
 images {
-  image: "/assets/backgorundtest.jpg"
+  image: "/assets/attack.png"
 }
 images {
-  image: "/assets/air_attack.png"
+  image: "/assets/diamond.png"
 }
-extrude_borders: 2
+images {
+  image: "/assets/helper.png"
+}

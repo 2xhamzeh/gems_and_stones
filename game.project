@@ -6,10 +6,10 @@ render = /orthographic/render/orthographic.renderc
 shared_state = 1
 
 [display]
-width = 1920
-height = 1080
+width = 1280
+height = 720
 high_dpi = 1
-fullscreen = 1
+fullscreen = 0
 dynamic_orientation = 0
 display_device_info = 0
 
@@ -27,4 +27,15 @@ dependencies#1 = https://github.com/britzl/defold-orthographic/archive/refs/tags
 [graphics]
 default_texture_min_filter = linear
 default_texture_mag_filter = linear
+
+[factory]
+max_count = 128
+
+[sprite]
+max_count = 1024
+
+[physics]
+max_collision_object_count = 1024
+max_collisions = 128
+trigger_overlap_capacity = 128
 

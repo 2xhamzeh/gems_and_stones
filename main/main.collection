@@ -38,7 +38,7 @@ instances {
     }
     properties {
       id: "zoom"
-      value: "1.0"
+      value: "0.1"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
@@ -95,14 +95,21 @@ instances {
 }
 scale_along_z: 0
 embedded_instances {
-  id: "enemies"
-  data: "embedded_components {\n"
+  id: "stones"
+  data: "components {\n"
+  "  id: \"stone_factory\"\n"
+  "  component: \"/enemies/stone_factory.script\"\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"factory\"\n"
   "  type: \"factory\"\n"
   "  data: \"prototype: \\\"/enemies/Stone.go\\\"\\n"
   "\"\n"
   "}\n"
   ""
+  position {
+    x: 1297.0
+  }
 }
 embedded_instances {
   id: "background"
@@ -131,6 +138,8 @@ embedded_instances {
 }
 embedded_instances {
   id: "walls"
+  children: "bl"
+  children: "tr"
   data: "embedded_components {\n"
   "  id: \"collisionobject\"\n"
   "  type: \"collisionobject\"\n"
@@ -138,13 +147,13 @@ embedded_instances {
   "mass: 0.0\\n"
   "friction: 0.1\\n"
   "restitution: 0.5\\n"
-  "group: \\\"default\\\"\\n"
-  "mask: \\\"default\\\"\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
   "embedded_collision_shape {\\n"
   "  shapes {\\n"
   "    shape_type: TYPE_BOX\\n"
   "    position {\\n"
-  "      x: 3319.0\\n"
+  "      x: 5182.0\\n"
   "    }\\n"
   "    rotation {\\n"
   "    }\\n"
@@ -154,7 +163,7 @@ embedded_instances {
   "  shapes {\\n"
   "    shape_type: TYPE_BOX\\n"
   "    position {\\n"
-  "      x: -3319.0\\n"
+  "      x: -5026.0\\n"
   "    }\\n"
   "    rotation {\\n"
   "    }\\n"
@@ -165,7 +174,7 @@ embedded_instances {
   "    shape_type: TYPE_BOX\\n"
   "    position {\\n"
   "      x: 685.0\\n"
-  "      y: 1590.0\\n"
+  "      y: 3793.0\\n"
   "    }\\n"
   "    rotation {\\n"
   "      z: 0.70710677\\n"
@@ -178,7 +187,7 @@ embedded_instances {
   "    shape_type: TYPE_BOX\\n"
   "    position {\\n"
   "      x: 685.0\\n"
-  "      y: -1590.0\\n"
+  "      y: -3799.0\\n"
   "    }\\n"
   "    rotation {\\n"
   "      z: 0.70710677\\n"
@@ -187,20 +196,62 @@ embedded_instances {
   "    index: 9\\n"
   "    count: 3\\n"
   "  }\\n"
-  "  data: 26.535835\\n"
-  "  data: 1713.8639\\n"
+  "  data: 1890.3406\\n"
+  "  data: 6020.939\\n"
   "  data: 10.0\\n"
-  "  data: 26.535835\\n"
-  "  data: 1713.8639\\n"
+  "  data: 1733.3816\\n"
+  "  data: 6008.1553\\n"
   "  data: 10.0\\n"
-  "  data: 26.535835\\n"
+  "  data: 2233.9426\\n"
   "  data: 4818.221\\n"
   "  data: 10.0\\n"
-  "  data: 26.535835\\n"
+  "  data: 2237.2446\\n"
   "  data: 4818.221\\n"
   "  data: 10.0\\n"
   "}\\n"
   "\"\n"
   "}\n"
   ""
+}
+embedded_instances {
+  id: "bl"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"gem\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/pngs.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: -3426.0
+    y: -1744.0
+  }
+}
+embedded_instances {
+  id: "tr"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"gem\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 64.0\\n"
+  "  y: 64.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/pngs.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 3424.0
+    y: 1711.0
+  }
 }

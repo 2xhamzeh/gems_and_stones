@@ -1,0 +1,57 @@
+function init(self)
+	self.left = go.get_position("bl").x
+	self.bottom = go.get_position("bl").y
+	self.top = go.get_position("tr").y
+	self.right = go.get_position("tr").x
+	self.count = 0
+	self.limit = 400
+
+	self.frequency = 0.00001
+	self.timer = 0.0
+end
+
+local function spawn(self)
+	local wall = math.random(1,4)
+	local pos
+
+	-- choose random position based on which wall it is
+	if wall == 1 then
+		-- Left wall
+		pos = vmath.vector3(self.left, math.random(self.bottom, self.top), 0)
+	elseif wall == 2 then
+		-- Right wall
+		pos = vmath.vector3(self.right, math.random(self.bottom, self.top), 0)
+	elseif wall == 3 then
+		-- Top wall
+		pos = vmath.vector3(math.random(self.left, self.right), self.top, 0)
+	else
+		-- Bottom wall
+		pos = vmath.vector3(math.random(self.left, self.right), self.bottom, 0)
+	end
+
+	factory.create("#factory", pos, nil, { parent = msg.url()})
+	self.count = self.count + 1
+
+end
+	
+
+
+function update(self, dt)
+	self.timer = self.timer + dt
+	if self.timer >= self.frequency then
+		self.timer = 0
+		if(self.count < self.limit) then
+			spawn(self)
+		end
+	end
+end
+
+
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("dead") then
+		self.count = self.count - 1
+	end
+end
+
+

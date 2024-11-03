@@ -37,11 +37,6 @@ instances {
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
-      id: "zoom"
-      value: "0.2"
-      type: PROPERTY_TYPE_NUMBER
-    }
-    properties {
       id: "projection"
       value: "FIXED_AUTO"
       type: PROPERTY_TYPE_HASH

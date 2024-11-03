@@ -5,16 +5,19 @@ components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"gem\"\n"
+  data: "default_animation: \"air_attack\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
   "  texture: \"/assets/pngs.atlas\"\n"
   "}\n"
   ""
+  position {
+    y: -3.0
+  }
   scale {
-    x: 0.2
-    y: 0.2
+    x: 1.3734
+    y: 0.92911
   }
 }
 embedded_components {
@@ -36,7 +39,7 @@ embedded_components {
   "    index: 0\n"
   "    count: 1\n"
   "  }\n"
-  "  data: 5.5\n"
+  "  data: 7.004796\n"
   "}\n"
   ""
 }

@@ -1,9 +1,17 @@
-go.property("direction", vmath.vector3())
+
+local camera = require "orthographic.camera"
+go.property("mouse_pos", vmath.vector3())
 
 function init(self)
 	self.speed = 1000
 	self.pos = go.get_position()
 	self.timer = 5
+	self.mouse_pos = camera.screen_to_world(nil, self.mouse_pos)
+	self.direction = vmath.normalize(vmath.vector3(self.mouse_pos.x - self.pos.x, self.mouse_pos.y - self.pos.y, 0))
+	
+	local angle = math.atan2( self.mouse_pos.y- self.pos.y , self.mouse_pos.x - self.pos.x) - math.pi/2
+	go.set_rotation(vmath.quat_rotation_z(angle))
+	
 end
 
 function update(self, dt)

@@ -2,6 +2,7 @@ local camera = require "orthographic.camera"
 go.property("speed", 300)
 go.property("lifetime", 0.2)
 go.property("hit_value", 10)
+go.property("aoe", false)
 
 go.property("mouse_pos", vmath.vector3())
 
@@ -25,8 +26,11 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("trigger_response") then
+		
 		msg.post(message.other_id, "hit", {hit_value = self.hit_value})
-		go.delete()
+		if not self.aoe then
+			go.delete()
+		end
 	end
 end
 

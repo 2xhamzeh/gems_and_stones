@@ -2,6 +2,54 @@ components {
   id: "player"
   component: "/player/player.script"
 }
+components {
+  id: "attack_factory"
+  component: "/player/attack/attack_factory.script"
+  properties {
+    id: "factory_id"
+    value: "attack"
+    type: PROPERTY_TYPE_URL
+  }
+}
+components {
+  id: "ability_factory"
+  component: "/player/attack/attack_factory.script"
+  properties {
+    id: "attack_rate"
+    value: "1.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
+    id: "input_trigger"
+    value: "ability"
+    type: PROPERTY_TYPE_HASH
+  }
+  properties {
+    id: "factory_id"
+    value: "ability"
+    type: PROPERTY_TYPE_URL
+  }
+  properties {
+    id: "speed"
+    value: "500.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
+    id: "lifetime"
+    value: "10.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
+    id: "hit_value"
+    value: "100.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
+    id: "aoe"
+    value: "true"
+    type: PROPERTY_TYPE_BOOLEAN
+  }
+}
 embedded_components {
   id: "sprite"
   type: "sprite"
@@ -37,5 +85,17 @@ embedded_components {
   "  data: 5.960093\n"
   "}\n"
   "locked_rotation: true\n"
+  ""
+}
+embedded_components {
+  id: "attack"
+  type: "factory"
+  data: "prototype: \"/player/attack/Attack.go\"\n"
+  ""
+}
+embedded_components {
+  id: "ability"
+  type: "factory"
+  data: "prototype: \"/player/attack/Attack.go\"\n"
   ""
 }

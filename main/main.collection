@@ -2,11 +2,26 @@ name: "main"
 instances {
   id: "Player"
   prototype: "/player/Player.go"
-  children: "attack"
   position {
     x: 265.0
     y: 206.0
     z: 1.0
+  }
+  component_properties {
+    id: "attack_factory"
+    properties {
+      id: "factory_id"
+      value: "#attack"
+      type: PROPERTY_TYPE_URL
+    }
+  }
+  component_properties {
+    id: "ability_factory"
+    properties {
+      id: "factory_id"
+      value: "#ability"
+      type: PROPERTY_TYPE_URL
+    }
   }
 }
 instances {
@@ -223,20 +238,6 @@ embedded_instances {
   "  id: \"factory\"\n"
   "  type: \"factory\"\n"
   "  data: \"prototype: \\\"/enemies/Stone.go\\\"\\n"
-  "\"\n"
-  "}\n"
-  ""
-}
-embedded_instances {
-  id: "attack"
-  data: "components {\n"
-  "  id: \"attack_factory\"\n"
-  "  component: \"/player/attack/attack_factory.script\"\n"
-  "}\n"
-  "embedded_components {\n"
-  "  id: \"factory\"\n"
-  "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/player/attack/Attack.go\\\"\\n"
   "\"\n"
   "}\n"
   ""

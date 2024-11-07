@@ -1,0 +1,35 @@
+go.property("attack_rate", 0.5)
+go.property("input_trigger", hash("attack"))
+
+go.property("speed", 300)
+go.property("lifetime", 0.2)
+go.property("hit_value", 10)
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.timer = self.attack_rate
+	self.can_attack = true
+end
+
+
+function update(self, dt)
+	if not self.can_attack then
+		self.timer = self.timer - dt
+		if self.timer <= 0 then
+			self.can_attack = true
+			self.timer = self.attack_rate
+		end
+	end
+end
+
+
+function on_input(self, action_id, action)
+	if action_id == self.input_trigger and action.pressed then
+		if self.can_attack then
+			self.can_attack = false
+			local mouse_pos = vmath.vector3(action.x, action.y, 0)
+			factory.create("#factory", self.pos, nil, {mouse_pos = mouse_pos, speed = self.speed, hit_value = self.hit_value, lifetime = self.lifetime})
+		end
+	end
+end
+

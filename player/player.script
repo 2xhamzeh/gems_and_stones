@@ -20,9 +20,9 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("hit") then 
-		self.health = self.health - 10
+		self.health = self.health - message.hit_value
 		if self.health <= 0 then
-			--print("lost")
+			print("player lost")
 		end
 	elseif message_id == hash("contact_point_response") then
 		self.pos = go.get_position() + message.normal * message.distance
@@ -39,8 +39,5 @@ function on_input(self, action_id, action)
 		self.direction.x = -1
 	elseif action_id == hash("right") then
 		self.direction.x = 1
-	elseif action_id == hash("attack") and action.pressed then
-		local mouse_pos = vmath.vector3(action.x, action.y, 0)
-		factory.create("#attack_factory", self.pos, nil, {mouse_pos = mouse_pos})
 	end
 end

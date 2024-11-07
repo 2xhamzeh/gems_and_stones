@@ -39,9 +39,3 @@ embedded_components {
   "locked_rotation: true\n"
   ""
 }
-embedded_components {
-  id: "attack_factory"
-  type: "factory"
-  data: "prototype: \"/player/attack/Attack.go\"\n"
-  ""
-}

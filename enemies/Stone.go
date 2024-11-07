@@ -1,6 +1,6 @@
 components {
   id: "stone"
-  component: "/enemies/stone.script"
+  component: "/enemies/enemy.script"
 }
 embedded_components {
   id: "sprite"

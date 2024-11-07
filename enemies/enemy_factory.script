@@ -1,5 +1,8 @@
 go.property("frequency", 0.2)
 go.property("limit", 400)
+go.property("speed", 50)
+go.property("health", 10)
+go.property("hit_value", 10)
 
 function init(self)
 	self.left = go.get_position("bl").x
@@ -32,7 +35,7 @@ local function spawn(self)
 		pos = vmath.vector3(math.random(self.left, self.right), self.bottom, 0)
 	end
 
-	factory.create("#factory", pos, nil, { parent = msg.url()})
+	factory.create("#factory", pos, nil, { parent = msg.url(), speed = self.speed, health = self.health, hit_value = self.hit_value})
 	self.count = self.count + 1
 end
 	

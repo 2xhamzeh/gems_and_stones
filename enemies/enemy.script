@@ -1,11 +1,12 @@
 go.property("parent", msg.url())
+go.property("speed", 50)
+go.property("health", 10)
+go.property("hit_value", 10)
 
 function init(self)
-	self.speed = 50
 	self.pos = go.get_position()
 	self.dircetion = vmath.vector3()
 end
-
 
 
 function update(self, dt)
@@ -32,12 +33,16 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("trigger_response") then 
 		if message.other_group == hash("player") then
 			-- let the player know he's been hit
-			msg.post("Player", "hit")
-			
+			msg.post("Player", "hit", {hit_value = self.hit_value})
+			msg.post(self.parent, "dead")
+			go.delete()
 		end
-		-- let the factory know one stone is dead
-		msg.post(self.parent, "dead")
-		go.delete()
+	elseif message_id == hash("hit") then
+		self.health = self.health - message.hit_value
+		if self.health < 1 then
+			msg.post(self.parent, "dead")
+			go.delete()
+		end
 	end
 end
 

@@ -1,6 +1,11 @@
 components {
   id: "attack"
-  component: "/player/attack/attack.script"
+  component: "/player/attacks/attack.script"
+  properties {
+    id: "lifetime"
+    value: "0.3"
+    type: PROPERTY_TYPE_NUMBER
+  }
 }
 embedded_components {
   id: "sprite"

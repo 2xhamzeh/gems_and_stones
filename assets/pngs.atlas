@@ -10,3 +10,6 @@ images {
 images {
   image: "/assets/helper.png"
 }
+images {
+  image: "/assets/ability.png"
+}

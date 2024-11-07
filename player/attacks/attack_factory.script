@@ -2,16 +2,10 @@ go.property("attack_rate", 0.5)
 go.property("input_trigger", hash("attack"))
 go.property("factory_id", msg.url())
 
-go.property("speed", 300)
-go.property("lifetime", 0.2)
-go.property("hit_value", 10)
-go.property("aoe", false)
-
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	self.timer = self.attack_rate
 	self.can_attack = true
-	print(self.factory_id)
 end
 
 

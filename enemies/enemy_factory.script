@@ -1,12 +1,15 @@
+go.property("frequency", 0.2)
+go.property("limit", 400)
+
 function init(self)
 	self.left = go.get_position("bl").x
 	self.bottom = go.get_position("bl").y
 	self.top = go.get_position("tr").y
 	self.right = go.get_position("tr").x
+	
+	--self.limit = 400
+	--self.frequency = 0.2
 	self.count = 0
-	self.limit = 400
-
-	self.frequency = 0.2
 	self.timer = 0.0
 end
 
@@ -31,7 +34,6 @@ local function spawn(self)
 
 	factory.create("#factory", pos, nil, { parent = msg.url()})
 	self.count = self.count + 1
-
 end
 	
 

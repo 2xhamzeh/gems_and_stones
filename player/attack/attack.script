@@ -12,7 +12,6 @@ function init(self)
 	
 	local angle = math.atan2( self.mouse_pos.y- self.pos.y , self.mouse_pos.x - self.pos.x) - math.pi/2
 	go.set_rotation(vmath.quat_rotation_z(angle))
-	
 end
 
 function update(self, dt)
@@ -25,6 +24,8 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-
+	if message_id == hash("trigger_response") then
+		go.delete()
+	end
 end
 

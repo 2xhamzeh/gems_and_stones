@@ -55,7 +55,7 @@ embedded_instances {
   id: "stones"
   data: "components {\n"
   "  id: \"stone_factory\"\n"
-  "  component: \"/enemies/stone_factory.script\"\n"
+  "  component: \"/enemies/enemy_factory.script\"\n"
   "}\n"
   "embedded_components {\n"
   "  id: \"factory\"\n"
@@ -206,4 +206,17 @@ embedded_instances {
     x: 658.0
     y: 509.0
   }
+}
+embedded_instances {
+  id: "stones_big"
+  data: "components {\n"
+  "  id: \"stone_factory\"\n"
+  "  component: \"/enemies/enemy_factory.script\"\n"
+  "  properties {\n"
+  "    id: \"frequency\"\n"
+  "    value: \"1.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  ""
 }

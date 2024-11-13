@@ -13,3 +13,6 @@ images {
 images {
   image: "/assets/ability.png"
 }
+images {
+  image: "/assets/stone_red.png"
+}

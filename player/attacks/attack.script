@@ -25,7 +25,7 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("trigger_response") then
+	if message_id == hash("trigger_response") and message.enter == true then
 		
 		msg.post(message.other_id, "hit", {hit_value = self.hit_value})
 		if not self.aoe then

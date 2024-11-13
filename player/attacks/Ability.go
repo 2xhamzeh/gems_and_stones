@@ -8,12 +8,12 @@ components {
   }
   properties {
     id: "lifetime"
-    value: "3.0"
+    value: "1.0"
     type: PROPERTY_TYPE_NUMBER
   }
   properties {
     id: "hit_value"
-    value: "100.0"
+    value: "30.0"
     type: PROPERTY_TYPE_NUMBER
   }
   properties {

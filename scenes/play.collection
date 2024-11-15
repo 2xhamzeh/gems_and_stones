@@ -1,0 +1,262 @@
+name: "playing"
+instances {
+  id: "Player"
+  prototype: "/player/Player.go"
+  position {
+    x: 265.0
+    y: 206.0
+    z: 1.0
+  }
+  component_properties {
+    id: "attack_factory"
+    properties {
+      id: "factory_id"
+      value: "#attack"
+      type: PROPERTY_TYPE_URL
+    }
+  }
+  component_properties {
+    id: "ability_factory"
+    properties {
+      id: "factory_id"
+      value: "#ability"
+      type: PROPERTY_TYPE_URL
+    }
+  }
+}
+instances {
+  id: "camera"
+  prototype: "/orthographic/camera.go"
+  position {
+    x: 265.0
+    y: 206.0
+  }
+  component_properties {
+    id: "script"
+    properties {
+      id: "far_z"
+      value: "10.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "zoom"
+      value: "5.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "projection"
+      value: "FIXED_AUTO"
+      type: PROPERTY_TYPE_HASH
+    }
+    properties {
+      id: "enabled"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "follow"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "follow_target"
+      value: "/Player"
+      type: PROPERTY_TYPE_HASH
+    }
+    properties {
+      id: "follow_lerp"
+      value: "0.2"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "stones"
+  data: "components {\n"
+  "  id: \"stone_factory\"\n"
+  "  component: \"/enemies/enemy_factory.script\"\n"
+  "  properties {\n"
+  "    id: \"frequency\"\n"
+  "    value: \"1.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"factory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/enemies/Stone.go\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "level"
+  children: "spawn_points"
+  data: "components {\n"
+  "  id: \"bg\"\n"
+  "  component: \"/assets/bg.tilemap\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"walls\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "      x: 252.0\\n"
+  "      y: -140.0\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "      x: 252.0\\n"
+  "      y: 524.0\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 3\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "      x: 652.0\\n"
+  "      y: 213.0\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "      z: 0.70710677\\n"
+  "      w: 0.70710677\\n"
+  "    }\\n"
+  "    index: 6\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "      x: -140.0\\n"
+  "      y: 213.0\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "      z: 0.70710677\\n"
+  "      w: 0.70710677\\n"
+  "    }\\n"
+  "    index: 9\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 547.8755\\n"
+  "  data: 134.83073\\n"
+  "  data: 10.0\\n"
+  "  data: 547.8755\\n"
+  "  data: 134.83073\\n"
+  "  data: 10.0\\n"
+  "  data: 547.8755\\n"
+  "  data: 134.83073\\n"
+  "  data: 10.0\\n"
+  "  data: 547.8755\\n"
+  "  data: 134.83073\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "spawn_points"
+  children: "bl"
+  children: "tr"
+  data: ""
+}
+embedded_instances {
+  id: "bl"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"helper\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 16.0\\n"
+  "  y: 16.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/pngs.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 196.0\n"
+  "    y: -65.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -334.0
+    y: -90.0
+  }
+}
+embedded_instances {
+  id: "tr"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"helper\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 16.0\\n"
+  "  y: 16.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/pngs.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 32.0\n"
+  "    y: 17.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 658.0
+    y: 509.0
+  }
+}
+embedded_instances {
+  id: "stones_red"
+  data: "components {\n"
+  "  id: \"stone_factory\"\n"
+  "  component: \"/enemies/enemy_factory.script\"\n"
+  "  properties {\n"
+  "    id: \"frequency\"\n"
+  "    value: \"3.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"limit\"\n"
+  "    value: \"100.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"factory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/enemies/StoneRed.go\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "gui"
+  data: ""
+}

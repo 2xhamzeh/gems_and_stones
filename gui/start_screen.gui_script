@@ -3,9 +3,9 @@ local state = require("game_state")
 
 
 
-local function start(self)
+local function play(self)
+	msg.post("main:/loader#loader", "play")
 	state.currnet_state = state.PLAYING
-
 end
 
 local function quit(self)
@@ -14,7 +14,7 @@ end
 
 function init(self)
 	self.druid = druid.new(self)
-	self.b = self.druid:new_button("start", start)
+	self.b = self.druid:new_button("play", play)
 	self.b = self.druid:new_button("quit", quit)	
 	
 end
@@ -29,6 +29,10 @@ end
 
 function on_message(self, message_id, message, sender)
 	self.druid:on_message(message_id, message, sender)
+	if message_id == hash("proxy_loaded") then
+		msg.post(sender, "init")
+		msg.post(sender, "enable")
+	end
 end
 
 function on_input(self, action_id, action)

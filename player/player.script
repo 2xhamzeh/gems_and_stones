@@ -1,6 +1,11 @@
 local state = require("game_state")
 go.property("speed", 100)
 
+local function gameover()
+	state.currnet_state = state.GAME_OVER
+	msg.post("main:/loader#loader", "gameover")
+end
+
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	self.direction = vmath.vector3(0,0,0)
@@ -24,7 +29,7 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("hit") then 
 		self.health = self.health - message.hit_value
 		if self.health <= 0 then
-			print("player lost")
+			gameover()
 		end
 	elseif message_id == hash("contact_point_response") then
 		self.pos = go.get_position() + message.normal * message.distance

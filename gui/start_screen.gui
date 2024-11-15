@@ -20,18 +20,6 @@ nodes {
   visible: false
 }
 nodes {
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_BOX
-  id: "start_screen"
-  parent: "root"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-  visible: false
-}
-nodes {
   position {
     y: 75.0
   }
@@ -40,8 +28,9 @@ nodes {
     y: 100.0
   }
   type: TYPE_BOX
-  id: "start"
-  parent: "start_screen"
+  id: "play"
+  parent: "root"
+  layer: "buttons"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -60,10 +49,11 @@ nodes {
     z: 0.0
   }
   type: TYPE_TEXT
-  text: "Start"
+  text: "Play\n"
+  ""
   font: "default"
-  id: "start_text"
-  parent: "start"
+  id: "text_play"
+  parent: "play"
   inherit_alpha: true
 }
 nodes {
@@ -76,7 +66,8 @@ nodes {
   }
   type: TYPE_BOX
   id: "quit"
-  parent: "start_screen"
+  parent: "root"
+  layer: "buttons"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -97,9 +88,32 @@ nodes {
   type: TYPE_TEXT
   text: "Quit"
   font: "default"
-  id: "quit_text"
+  id: "text_quit"
   parent: "quit"
   inherit_alpha: true
+}
+nodes {
+  size {
+    x: 1920.0
+    y: 1080.0
+  }
+  color {
+    x: 0.6
+    y: 0.6
+    z: 0.6
+  }
+  type: TYPE_BOX
+  id: "box"
+  parent: "root"
+  layer: "background"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+layers {
+  name: "background"
+}
+layers {
+  name: "buttons"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

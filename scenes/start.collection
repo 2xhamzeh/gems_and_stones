@@ -1,0 +1,20 @@
+name: "start_screem"
+scale_along_z: 0
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"start_screen\"\n"
+  "  component: \"/gui/start_screen.gui\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "next"
+  data: "embedded_components {\n"
+  "  id: \"cp_play\"\n"
+  "  type: \"collectionproxy\"\n"
+  "  data: \"collection: \\\"/scenes/play.collection\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}

@@ -1,6 +1,7 @@
 go.property("attack_rate", 0.5)
 go.property("input_trigger", hash("attack"))
 go.property("factory_id", msg.url())
+local state = require("game_state")
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
@@ -10,22 +11,26 @@ end
 
 
 function update(self, dt)
-	if not self.can_attack then
-		self.timer = self.timer - dt
-		if self.timer <= 0 then
-			self.can_attack = true
-			self.timer = self.attack_rate
+	if(state.currnet_state == state.PLAYING) then
+		if not self.can_attack then
+			self.timer = self.timer - dt
+			if self.timer <= 0 then
+				self.can_attack = true
+				self.timer = self.attack_rate
+			end
 		end
 	end
 end
 
 
 function on_input(self, action_id, action)
-	if action_id == self.input_trigger and action.pressed then
-		if self.can_attack then
-			self.can_attack = false
-			local mouse_pos = vmath.vector3(action.x, action.y, 0)
-			factory.create(self.factory_id, self.pos, nil, {mouse_pos = mouse_pos, speed = self.speed, hit_value = self.hit_value, lifetime = self.lifetime, aoe = self.aoe})
+	if(state.currnet_state == state.PLAYING) then
+		if action_id == self.input_trigger and action.pressed then
+			if self.can_attack then
+				self.can_attack = false
+				local mouse_pos = vmath.vector3(action.x, action.y, 0)
+				factory.create(self.factory_id, self.pos, nil, {mouse_pos = mouse_pos, speed = self.speed, hit_value = self.hit_value, lifetime = self.lifetime, aoe = self.aoe})
+			end
 		end
 	end
 end

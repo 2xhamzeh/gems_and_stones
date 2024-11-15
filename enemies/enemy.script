@@ -1,3 +1,5 @@
+local state = require("game_state")
+
 go.property("parent", msg.url())
 go.property("speed", 50)
 go.property("health", 10)
@@ -10,21 +12,22 @@ end
 
 
 function update(self, dt)
-	-- get player position and calculate stone direction
-	local player_pos = go.get_position("Player")
-	self.direction = vmath.vector3(
-	player_pos.x - self.pos.x,
-	player_pos.y - self.pos.y,
-	0
-)
+	if(state.currnet_state == state.PLAYING) then
+		-- get player position and calculate stone direction
+		local player_pos = go.get_position("Player")
+		self.direction = vmath.vector3(
+		player_pos.x - self.pos.x,
+		player_pos.y - self.pos.y,
+		0
+	)
 
-	-- move towards the player
-	if vmath.length(self.direction) ~= 0 then
-		self.direction = vmath.normalize(self.direction)
-		self.pos = self.pos + self.direction * self.speed * dt
-		go.set_position(self.pos)
+		-- move towards the player
+		if vmath.length(self.direction) ~= 0 then
+			self.direction = vmath.normalize(self.direction)
+			self.pos = self.pos + self.direction * self.speed * dt
+			go.set_position(self.pos)
+		end
 	end
-
 end
 
 

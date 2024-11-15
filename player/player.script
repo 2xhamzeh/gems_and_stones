@@ -1,4 +1,4 @@
-
+local state = require("game_state")
 go.property("speed", 100)
 
 function init(self)
@@ -9,12 +9,14 @@ function init(self)
 end
 
 function update(self, dt)
-	if vmath.length(self.direction) ~= 0 then
-		self.direction = vmath.normalize(self.direction)
-		self.pos = self.pos + self.direction * dt * self.speed
-		go.set_position(self.pos)
-		self.direction.x = 0
-		self.direction.y = 0
+	if(state.currnet_state == state.PLAYING) then
+		if vmath.length(self.direction) ~= 0 then
+			self.direction = vmath.normalize(self.direction)
+			self.pos = self.pos + self.direction * dt * self.speed
+			go.set_position(self.pos)
+			self.direction.x = 0
+			self.direction.y = 0
+		end
 	end
 end
 

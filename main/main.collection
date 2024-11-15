@@ -247,3 +247,11 @@ embedded_instances {
   "}\n"
   ""
 }
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"start_screen\"\n"
+  "  component: \"/gui/start_screen.gui\"\n"
+  "}\n"
+  ""
+}

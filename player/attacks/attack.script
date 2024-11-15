@@ -1,4 +1,5 @@
 local camera = require "orthographic.camera"
+local state = require("game_state")
 go.property("speed", 300)
 go.property("lifetime", 0.2)
 go.property("hit_value", 10)
@@ -16,17 +17,18 @@ function init(self)
 end
 
 function update(self, dt)
-	self.lifetime = self.lifetime - dt
-	if self.lifetime <= 0 then
-		go.delete()
+	if(state.currnet_state == state.PLAYING) then
+		self.lifetime = self.lifetime - dt
+		if self.lifetime <= 0 then
+			go.delete()
+		end
+		self.pos = self.pos + self.direction * self.speed * dt
+		go.set_position(self.pos)
 	end
-	self.pos = self.pos + self.direction * self.speed * dt
-	go.set_position(self.pos)
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("trigger_response") and message.enter == true then
-		
 		msg.post(message.other_id, "hit", {hit_value = self.hit_value})
 		if not self.aoe then
 			go.delete()

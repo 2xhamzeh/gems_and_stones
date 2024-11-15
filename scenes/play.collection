@@ -40,7 +40,7 @@ instances {
     }
     properties {
       id: "zoom"
-      value: "5.0"
+      value: "7.0"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
@@ -78,7 +78,7 @@ embedded_instances {
   "  component: \"/enemies/enemy_factory.script\"\n"
   "  properties {\n"
   "    id: \"frequency\"\n"
-  "    value: \"1.0\"\n"
+  "    value: \"3.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "}\n"
@@ -239,7 +239,7 @@ embedded_instances {
   "  component: \"/enemies/enemy_factory.script\"\n"
   "  properties {\n"
   "    id: \"frequency\"\n"
-  "    value: \"3.0\"\n"
+  "    value: \"5.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"

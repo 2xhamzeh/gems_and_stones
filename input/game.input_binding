@@ -16,7 +16,7 @@ key_trigger {
 }
 key_trigger {
   input: KEY_SPACE
-  action: "attack"
+  action: "ability"
 }
 key_trigger {
   input: KEY_UP
@@ -33,10 +33,6 @@ key_trigger {
 key_trigger {
   input: KEY_RIGHT
   action: "right"
-}
-key_trigger {
-  input: KEY_E
-  action: "ability"
 }
 key_trigger {
   input: KEY_ESC

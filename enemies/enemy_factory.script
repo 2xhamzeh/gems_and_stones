@@ -9,9 +9,7 @@ function init(self)
 	self.bottom = go.get_position("bl").y
 	self.top = go.get_position("tr").y
 	self.right = go.get_position("tr").x
-	
-	--self.limit = 400
-	--self.frequency = 0.2
+
 	self.count = 0
 	self.timer = 0.0
 end
@@ -37,6 +35,10 @@ local function spawn(self)
 
 	factory.create("#factory", pos, nil, { parent = msg.url()})
 	self.count = self.count + 1
+	-- increase frequency to increase difficulty
+	if self.frequency > 0.2 then
+		self.frequency = self.frequency * 0.95
+	end
 end
 	
 

@@ -1,4 +1,7 @@
 images {
   image: "/assets/gui/button.png"
 }
+images {
+  image: "/assets/gui/guide.png"
+}
 extrude_borders: 2

@@ -6,6 +6,11 @@ components {
   id: "attack_factory"
   component: "/player/attacks/attack_factory.script"
   properties {
+    id: "attack_rate"
+    value: "0.2"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
     id: "factory_id"
     value: "attack"
     type: PROPERTY_TYPE_URL
@@ -16,7 +21,7 @@ components {
   component: "/player/attacks/attack_factory.script"
   properties {
     id: "attack_rate"
-    value: "1.0"
+    value: "0.5"
     type: PROPERTY_TYPE_NUMBER
   }
   properties {

@@ -26,11 +26,3 @@ embedded_instances {
   "}\n"
   ""
 }
-embedded_instances {
-  id: "screen"
-  data: "components {\n"
-  "  id: \"screen_setup\"\n"
-  "  component: \"/player/screen_setup.script\"\n"
-  "}\n"
-  ""
-}

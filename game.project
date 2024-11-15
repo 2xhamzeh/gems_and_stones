@@ -9,7 +9,7 @@ shared_state = 1
 width = 1920
 height = 1080
 high_dpi = 1
-fullscreen = 0
+fullscreen = 1
 dynamic_orientation = 0
 display_device_info = 0
 
@@ -18,12 +18,13 @@ input_method = HiddenInputField
 
 [html5]
 scale_mode = stretch
+show_fullscreen_button = 0
+show_made_with_defold = 0
 
 [project]
 title = gems_and_stones
 dependencies#0 = https://github.com/Insality/druid/archive/refs/tags/1.0.zip
 dependencies#1 = https://github.com/britzl/defold-orthographic/archive/refs/tags/3.3.2.zip
-dependencies#2 = https://github.com/subsoap/defos/archive/refs/tags/v2.8.0.zip
 
 [graphics]
 default_texture_min_filter = nearest

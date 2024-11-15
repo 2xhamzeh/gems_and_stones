@@ -1,0 +1,36 @@
+local druid = require("druid.druid")
+local state = require("game_state")
+
+
+
+local function resume(self)
+	state.currnet_state = state.PLAYING
+	msg.post("#pause_gui", "disable")
+end
+
+local function quit(self)
+	msg.post("@system:", "exit", {code = 0})
+end
+
+function init(self)
+	msg.post("#pause_gui", "disable") -- disable by default when scene loads
+	self.druid = druid.new(self)
+	self.b = self.druid:new_button("resume", resume)
+	self.b = self.druid:new_button("quit", quit)	
+end
+
+function final(self)
+	self.druid:final()
+end
+
+function update(self, dt)
+	self.druid:update(dt)
+end
+
+function on_message(self, message_id, message, sender)
+	self.druid:on_message(message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+	return self.druid:on_input(action_id, action)
+end

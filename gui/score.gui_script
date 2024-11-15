@@ -1,0 +1,21 @@
+local score = require("score")
+local state = require("game_state")
+
+function init(self)
+	self.score_node = gui.get_node("score")
+end
+
+function update(self, dt)
+	if state.currnet_state == state.PLAYING then
+		score.currentscore = score.currentscore + dt
+		gui.set_text(self.score_node, string.format("%.3f", score.currentscore))
+	end
+end
+
+
+function on_input(self, action_id, action)
+	if action_id == hash("pause") then
+		state.currnet_state = state.PAUSE
+		msg.post("gui#pause_gui", "enable")	
+	end
+end

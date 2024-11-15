@@ -1,0 +1,55 @@
+script: "/gui/score.gui_script"
+fonts {
+  name: "pixel_font"
+  font: "/assets/gui/pixel_font.font"
+}
+nodes {
+  position {
+    x: 960.0
+    y: 540.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "root"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: -763.0
+    y: 480.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "pixel_font"
+  id: "score"
+  pivot: PIVOT_W
+  parent: "root"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -862.0
+    y: 480.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Score:"
+  font: "pixel_font"
+  id: "label"
+  parent: "root"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

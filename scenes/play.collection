@@ -258,5 +258,13 @@ embedded_instances {
 }
 embedded_instances {
   id: "gui"
-  data: ""
+  data: "components {\n"
+  "  id: \"pause_gui\"\n"
+  "  component: \"/gui/pause.gui\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"score_gui\"\n"
+  "  component: \"/gui/score.gui\"\n"
+  "}\n"
+  ""
 }

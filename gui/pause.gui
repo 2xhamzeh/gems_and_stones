@@ -1,0 +1,73 @@
+script: "/gui/pause.gui_script"
+fonts {
+  name: "pixel_font"
+  font: "/assets/gui/pixel_font.font"
+}
+textures {
+  name: "gui_pngs"
+  texture: "/assets/gui/gui_pngs.atlas"
+}
+nodes {
+  position {
+    x: 960.0
+    y: 540.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "root"
+  adjust_mode: ADJUST_MODE_STRETCH
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    y: 75.0
+  }
+  type: TYPE_BOX
+  texture: "gui_pngs/button"
+  id: "resume"
+  parent: "root"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Resume"
+  font: "pixel_font"
+  id: "text_Resume"
+  parent: "resume"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: -75.0
+  }
+  type: TYPE_BOX
+  texture: "gui_pngs/button"
+  id: "quit"
+  parent: "root"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Quit"
+  font: "pixel_font"
+  id: "text_quit"
+  parent: "quit"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

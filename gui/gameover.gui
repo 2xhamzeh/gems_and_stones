@@ -1,0 +1,133 @@
+script: "/gui/gameover.gui_script"
+fonts {
+  name: "pixel_font"
+  font: "/assets/gui/pixel_font.font"
+}
+textures {
+  name: "gui_pngs"
+  texture: "/assets/gui/gui_pngs.atlas"
+}
+nodes {
+  position {
+    x: 960.0
+    y: 540.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "root"
+  adjust_mode: ADJUST_MODE_STRETCH
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    y: -45.0
+  }
+  type: TYPE_BOX
+  texture: "gui_pngs/button"
+  id: "play_again"
+  parent: "root"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Play Again"
+  font: "pixel_font"
+  id: "text_play_again"
+  parent: "play_again"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: -195.0
+  }
+  type: TYPE_BOX
+  texture: "gui_pngs/button"
+  id: "quit"
+  parent: "root"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Quit"
+  font: "pixel_font"
+  id: "text_quit"
+  parent: "quit"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 300.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Your Score:"
+  font: "pixel_font"
+  id: "label"
+  parent: "root"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 129.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Highscore:"
+  font: "pixel_font"
+  id: "label2"
+  parent: "root"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 250.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "pixel_font"
+  id: "your_score"
+  parent: "root"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 79.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "pixel_font"
+  id: "highscore"
+  parent: "root"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

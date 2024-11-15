@@ -1,12 +1,16 @@
-script: "/gui/start_screen.gui_script"
+script: "/gui/start.gui_script"
 fonts {
-  name: "default"
-  font: "/builtins/fonts/default.font"
+  name: "pixel_font"
+  font: "/assets/gui/pixel_font.font"
+}
+textures {
+  name: "gui_pngs"
+  texture: "/assets/gui/gui_pngs.atlas"
 }
 nodes {
   position {
-    x: 640.0
-    y: 360.0
+    x: 960.0
+    y: 540.0
   }
   size {
     x: 200.0
@@ -23,35 +27,21 @@ nodes {
   position {
     y: 75.0
   }
-  size {
-    x: 200.0
-    y: 100.0
-  }
   type: TYPE_BOX
+  texture: "gui_pngs/button"
   id: "play"
   parent: "root"
-  layer: "buttons"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
-  scale {
-    x: 2.527078
-    y: 2.012161
-  }
   size {
     x: 200.0
     y: 100.0
   }
-  color {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
   type: TYPE_TEXT
-  text: "Play\n"
-  ""
-  font: "default"
+  text: "Play"
+  font: "pixel_font"
   id: "text_play"
   parent: "play"
   inherit_alpha: true
@@ -60,60 +50,24 @@ nodes {
   position {
     y: -75.0
   }
-  size {
-    x: 200.0
-    y: 100.0
-  }
   type: TYPE_BOX
+  texture: "gui_pngs/button"
   id: "quit"
   parent: "root"
-  layer: "buttons"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
-  scale {
-    x: 2.527078
-    y: 2.012161
-  }
   size {
     x: 200.0
     y: 100.0
-  }
-  color {
-    x: 0.0
-    y: 0.0
-    z: 0.0
   }
   type: TYPE_TEXT
   text: "Quit"
-  font: "default"
+  font: "pixel_font"
   id: "text_quit"
   parent: "quit"
   inherit_alpha: true
-}
-nodes {
-  size {
-    x: 1920.0
-    y: 1080.0
-  }
-  color {
-    x: 0.6
-    y: 0.6
-    z: 0.6
-  }
-  type: TYPE_BOX
-  id: "box"
-  parent: "root"
-  layer: "background"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-layers {
-  name: "background"
-}
-layers {
-  name: "buttons"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

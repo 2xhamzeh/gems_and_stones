@@ -6,8 +6,8 @@ render = /orthographic/render/orthographic.renderc
 shared_state = 1
 
 [display]
-width = 1280
-height = 720
+width = 1920
+height = 1080
 high_dpi = 1
 fullscreen = 0
 dynamic_orientation = 0

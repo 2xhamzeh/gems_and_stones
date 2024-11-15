@@ -23,6 +23,7 @@ scale_mode = stretch
 title = gems_and_stones
 dependencies#0 = https://github.com/Insality/druid/archive/refs/tags/1.0.zip
 dependencies#1 = https://github.com/britzl/defold-orthographic/archive/refs/tags/3.3.2.zip
+dependencies#2 = https://github.com/subsoap/defos/archive/refs/tags/v2.8.0.zip
 
 [graphics]
 default_texture_min_filter = nearest

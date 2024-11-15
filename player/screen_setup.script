@@ -1,0 +1,4 @@
+function init(self)
+	defos.set_window_title("Gems and Stones")
+	defos.set_fullscreen(true)
+end

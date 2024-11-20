@@ -13,7 +13,7 @@ components {
   }
   properties {
     id: "hit_value"
-    value: "10.0"
+    value: "20.0"
     type: PROPERTY_TYPE_NUMBER
   }
 }

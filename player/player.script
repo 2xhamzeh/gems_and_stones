@@ -28,6 +28,7 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("hit") then 
 		self.health = self.health - message.hit_value
+		msg.post("/gui#score_gui", "change_health", {health = self.health})
 		if self.health <= 0 then
 			gameover()
 		end

@@ -51,5 +51,37 @@ nodes {
   parent: "root"
   inherit_alpha: true
 }
+nodes {
+  position {
+    x: 764.0
+    y: 480.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Health:"
+  font: "pixel_font"
+  id: "health_label"
+  parent: "root"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 898.0
+    y: 480.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "100"
+  font: "pixel_font"
+  id: "health"
+  parent: "root"
+  inherit_alpha: true
+}
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
